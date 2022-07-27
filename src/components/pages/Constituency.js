@@ -2,7 +2,9 @@ import React from 'react'
 
 const Constituency = () => {
   return (
-    <div>Constituency</div>
+   <main>
+    Constituency
+   </main>
   )
 }
 
