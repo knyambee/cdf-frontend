@@ -1,15 +1,54 @@
-import React from 'react'
+import * as React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 
-const Footer = () => {
-  const date  = new Date();
+function Copyright() {
   return (
-    <footer>
-      <p>Ministry of Local Govenment and Rural Development</p>
-      <p>P.O Box 50027</p>
-      <p>Lusaka</p>
-      <p>Copyright {date.getFullYear()}</p>
-    </footer>
-  )
+    <Typography variant="body2" color="text.secondary">
+      {'Copyright © '}
+      <Link color="inherit" href="#">
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
+
+const Footer = (props) => {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+      }}
+    >
+      <CssBaseline />
+
+      <Box
+        component="footer"
+        sx={{
+          py: 3,
+          px: 2,
+          mt: 'auto',
+          backgroundColor: (theme) =>
+            theme.palette.mode === 'light'
+              ? theme.palette.grey[200]
+              : theme.palette.grey[800],
+        }}
+      >
+        <Container maxWidth="sm">
+          <Typography variant="body1">
+            Ministry of Local Government and Rural Development
+          </Typography>
+          <Copyright />
+        </Container>
+      </Box>
+    </Box>
+  );
+};
 
 export default Footer
