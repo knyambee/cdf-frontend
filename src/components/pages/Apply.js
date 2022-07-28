@@ -1,12 +1,12 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import CommunityProject from "../forms/CommunityProject";
-import EmpowermentGrant from "../forms/EmpowermentGrant";
-import SkillsTrainingBursary from "../forms/SkillsTrainingBursary";
-import EmpowermentLoan from "../forms/EmpowermentLoan";
-import SecondaryBoardingBursary from "../forms/SecondaryBoardingBursary";
+import CommunityProject from "../forms/community-propject/CommunityProject";
+import EmpowermentGrant from "../forms/empowerment-grant/EmpowermentGrant";
+import SkillsTrainingBursary from "../forms/skills-development-bursary/SkillsTrainingBursary";
+import EmpowermentLoan from "../forms/empowerment-loan/EmpowermentLoan";
+import SecondaryBoardingBursary from "../forms/secondary-school-bursary/SecondaryBoardingBursary";
 
 const Apply = () => {
   const [applicationForm, setApplicationForm] = useState(
@@ -50,14 +50,6 @@ const Apply = () => {
     setApplicationForm(e.target.value);
   };
 
-  const renderSelectionResult = () => {
-    let result;
-    applicationForm === "selectApplicationForm"
-      ? (result = "Select Application Form")
-      : (result = applicationForm);
-    return result;
-  };
-
   return (
     <main>
       <h2>Types of Projects For Funding</h2>
@@ -73,9 +65,8 @@ const Apply = () => {
         Detailed information about each category can be found in the guide
         section.
       </p>
-      <p>You are applying for {renderSelectionResult()}</p>
 
-      <FormControl fullWidth>
+      <FormControl>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -86,13 +77,13 @@ const Apply = () => {
             Select Application Form
           </MenuItem>
           <MenuItem value="communityProject">
-            Community Project Application Form
+            Community Project
           </MenuItem>
           <MenuItem value="empowermentGrant">
-            Emporwerent Grant Application Form
+            Youth Women and Community Empowerment Grant
           </MenuItem>
           <MenuItem value="empowermentLoan">
-            Empowerment Loan Application Form
+            Loan Agreement
           </MenuItem>
           <MenuItem value="secondaryBoardingBursary">
             Secondary Boarding School Bursaries
