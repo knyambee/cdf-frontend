@@ -2,8 +2,6 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 
 export default function SkillsTrainingBursaryAttachments() {
   return (
@@ -15,45 +13,44 @@ export default function SkillsTrainingBursaryAttachments() {
         <Grid item xs={12} md={6}>
           <TextField
             required
-            id="cardName"
-            label="Name on card"
+            id="nrc"
             fullWidth
             autoComplete="cc-name"
             variant="standard"
+            type="file"
           />
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
             required
-            id="cardNumber"
-            label="Card number"
+            id="disabilityCard"
             fullWidth
             autoComplete="cc-number"
             variant="standard"
+            type="file"
           />
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
             required
-            id="expDate"
-            label="Expiry date"
+            id="recommendationLetter"
             fullWidth
             autoComplete="cc-exp"
             variant="standard"
+            type="file"
           />
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
             required
-            id="cvv"
-            label="CVV"
-            helperText="Last three digits on signature strip"
+            id="certificates"
+            helperText="A full Grade 12 School Certificate or GCE five (5), O-levels or equivalent or Grade 9 or 7 Certificates. "
             fullWidth
             autoComplete="cc-csc"
             variant="standard"
+            type="file"
           />
         </Grid>
-   
       </Grid>
     </React.Fragment>
   );

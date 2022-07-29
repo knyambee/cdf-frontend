@@ -36,7 +36,7 @@ const Home = () => {
               paragraph
             >
               Access to Community Development Funding (CDF) has never been
-              bigger and easier to access. Search and Apply for funding in your
+              bigger and easy. Search and Apply for funding in your
               Constituency.
             </Typography>
             <Stack
