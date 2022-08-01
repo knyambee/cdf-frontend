@@ -11,7 +11,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CommunityProjectDetailForm from "./CommunityProjectDetailForm";
 import CommunityProjectAttachments from "./CommunityProjectAttachments";
 import CommunityProjectReview from "./CommunityProjectReview";
-import CoatOFArms from "../../../images/coat-of-arms-zambia.png";
+import CoatOfArms from "../../layout/CoatOfArms";
 
 const steps = ["Main", "Attachments", "Review your application"];
 
@@ -47,8 +47,7 @@ const CommunityProject = () => {
           variant="outlined"
           sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
         >
-          <img src={CoatOFArms} alt="Coat of arms" align="center" />
-
+          <CoatOfArms />
           <Typography component="h1" variant="h4" align="center">
             CONSTITUENCY DEVELOPMENT FUND (CDF) APPLICATION FORM FOR COMMUNITY
             PROJECTS

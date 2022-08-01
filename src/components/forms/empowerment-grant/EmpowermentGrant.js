@@ -9,7 +9,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import EmporwementGrantReview from './EmpowerementGrantReview'
-import CoatOFArms from "../../../images/coat-of-arms-zambia.png";
+import CoatOfArms from "../../layout/CoatOfArms";
 import EmpowerementGrantAttachments from "./EmpowerementGrantAttachments";
 import EmpowerementGrantDetailForm from "./EmpowerementGrantDetailForm";
 
@@ -47,11 +47,7 @@ const EmpowermentGrant = () => {
           variant="outlined"
           sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
         >
-             <img
-            src={CoatOFArms}
-            alt="Coat of arms"
-        
-          />
+          <CoatOfArms />
           <Typography component="h1" variant="h4" align="center">
           CONSTITUENCY DEVELOPMENT FUND (CDF) GRANT APPLICATION FORM FOR YOUTH, WOMEN AND COMMUNITY EMPOWERMENT
           </Typography>

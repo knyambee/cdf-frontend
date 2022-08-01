@@ -15,9 +15,9 @@ export default function SkillsTrainingBursaryAttachments() {
             required
             id="nrc"
             fullWidth
-            autoComplete="cc-name"
             variant="standard"
             type="file"
+            helperText="Copy of Green National Registration Card."
           />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -28,6 +28,7 @@ export default function SkillsTrainingBursaryAttachments() {
             autoComplete="cc-number"
             variant="standard"
             type="file"
+            helperText="Disability card or letter from the hospital denoting disability."
           />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -35,9 +36,10 @@ export default function SkillsTrainingBursaryAttachments() {
             required
             id="recommendationLetter"
             fullWidth
-            autoComplete="cc-exp"
             variant="standard"
             type="file"
+            inputProps={{multiple: true}}
+            helperText="Recommendation letters from the Church/Chief/Headman/Head of previous School"
           />
         </Grid>
         <Grid item xs={12} md={6}>

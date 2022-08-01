@@ -8,10 +8,10 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import CoatOFArms from "../../../images/coat-of-arms-zambia.png";
 import SkillsTrainingBursaryDetailForm from "./SkillsTrainingBursaryDetailForm";
 import SkillsTrainingBursaryAttachments from "./SkillsTrainingBursaryAttachments";
 import SkillsTrainingBursaryReview from "./SkillsTrainingBursaryReview";
+import CoatOfArms from "../../layout/CoatOfArms";
 
 const steps = ["Main", "Attachments", "Review your application"];
 
@@ -47,7 +47,7 @@ const SkillsTrainingBursary = () => {
           variant="outlined"
           sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
         >
-          <img src={CoatOFArms} alt="Coat of arms" />
+         <CoatOfArms />
           <Typography component="h1" variant="h4" align="center">
             CONSTITUENCY DEVELOPMENT FUND SKILLS DEVELOPMENT BURSARY APPLICATION
             FORM

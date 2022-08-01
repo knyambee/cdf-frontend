@@ -52,20 +52,6 @@ const Apply = () => {
 
   return (
     <main>
-      <h2>Types of Projects For Funding</h2>
-      <p>These are the main categories of funding under CDF</p>
-      <ul>
-        <li>Community Projects</li>
-        <li>Emporwerent Grant</li>
-        <li>Empowerment Loan</li>
-        <li>Secondary Boarding School Bursaries</li>
-        <li>Skills Development Bursaries</li>
-      </ul>
-      <p>
-        Detailed information about each category can be found in the guide
-        section.
-      </p>
-
       <FormControl>
         <Select
           labelId="demo-simple-select-label"
