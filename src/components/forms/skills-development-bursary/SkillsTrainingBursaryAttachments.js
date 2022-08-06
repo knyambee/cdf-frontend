@@ -22,8 +22,9 @@ export default function SkillsTrainingBursaryAttachments({ formFields, setFormFi
           <Grid item xs={12} md={6}>
             <TextField
               required
-              id="nrc"
-              value={formFields.nrc}
+              id="nrcCopy"
+              name="nrcCopy"
+              value={formFields.nrcCopy}
               onChange={handleOnChange}
               fullWidth
               variant="standard"

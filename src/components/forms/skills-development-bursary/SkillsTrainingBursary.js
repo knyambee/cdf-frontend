@@ -12,19 +12,16 @@ import SkillsTrainingBursaryDetailForm from "./SkillsTrainingBursaryDetailForm";
 import SkillsTrainingBursaryAttachments from "./SkillsTrainingBursaryAttachments";
 import SkillsTrainingBursaryReview from "./SkillsTrainingBursaryReview";
 import CoatOfArms from "../../layout/CoatOfArms";
+import {fields} from './skillsTrainingBursaryBlankForm';
 
 const steps = ["Main", "Attachments", "Review your application"];
-const fields = {
-  surname: '',
-  otherNames: '',
-  nrc: [],
-};
+const blankForm = fields;
 
 const theme = createTheme();
 
 const SkillsTrainingBursary = () => {
   const [activeStep, setActiveStep] = React.useState(0);
-  const [formFields, setFormFields] = React.useState(fields);
+  const [formFields, setFormFields] = React.useState(blankForm);
 
   const handleNext = (e) => {
     setActiveStep(activeStep + 1);

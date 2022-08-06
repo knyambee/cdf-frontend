@@ -51,6 +51,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="3. Sex (Male/Female)"
                             fullWidth
                             variant="standard"
+                            value={formFields.gender}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -60,6 +62,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="Nationality"
                             fullWidth
                             variant="standard"
+                            value={formFields.nationality}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -70,6 +74,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="4. N.R.C No:"
                             fullWidth
                             variant="standard"
+                            value={formFields.nrc}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -80,6 +86,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="5. Date of birth"
                             fullWidth
                             variant="standard"
+                            value={formFields.dateOfBirth}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -90,42 +98,52 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="Place of Birth"
                             fullWidth
                             variant="standard"
+                            value={formFields.placeOfBirth}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={3}>
                         <TextField
                             id="state"
-                            name="state"
+                            name="district"
                             label="(a) District"
                             fullWidth
                             variant="standard"
+                            value={formFields.district}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={3}>
                         <TextField
-                            id="state"
-                            name="state"
+                            id="constituency"
+                            name="constituency"
                             label="(b) Constituency"
                             fullWidth
                             variant="standard"
+                            value={formFields.constituency}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={3}>
                         <TextField
-                            id="state"
-                            name="state"
+                            id="ward"
+                            name="ward"
                             label="(c) Ward"
                             fullWidth
                             variant="standard"
+                            value={formFields.ward}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={3}>
                         <TextField
-                            id="state"
-                            name="state"
+                            id="zone"
+                            name="zone"
                             label="(d) Zone"
                             fullWidth
                             variant="standard"
+                            value={formFields.zone}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -136,6 +154,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="7. Postal Address"
                             fullWidth
                             variant="standard"
+                            value={formFields.postalAddress}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -145,8 +165,9 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             name="mobilePhone"
                             label="8. Mobile Phone"
                             fullWidth
-                            autoComplete="shipping country"
                             variant="standard"
+                            value={formFields.mobilePhone}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -156,8 +177,9 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             name="email"
                             label="Email"
                             fullWidth
-                            autoComplete="shipping country"
                             variant="standard"
+                            value={formFields.email}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -168,6 +190,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="(a)Single Orphan/Double Orphan/Other (please Specify)"
                             fullWidth
                             variant="standard"
+                            value={formFields.opharnStatus}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -178,6 +202,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="(b) Are you disabled? Yes/No, If yes, specify nature of disability:"
                             fullWidth
                             variant="standard"
+                            value={formFields.disability}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -188,6 +214,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="(c) Financial Challenge (Specify):"
                             fullWidth
                             variant="standard"
+                            value={formFields.financialChallenge}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                 </Grid>
@@ -203,6 +231,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="10. School Leaver/Non School Leaver"
                             fullWidth
                             variant="standard"
+                            value={formFields.schoolLeaver}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -213,6 +243,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="Last grade attended"
                             fullWidth
                             variant="standard"
+                            value={formFields.lastGradeAttended}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -223,6 +255,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="11. Last School attended"
                             fullWidth
                             variant="standard"
+                            value={formFields.lastSchoolAttended}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -232,6 +266,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="District"
                             fullWidth
                             variant="standard"
+                            value={formFields.lastSchoolAttendedDistrict}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -241,6 +277,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="12. From Date"
                             fullWidth
                             variant="standard"
+                            value={formFields.fromDate}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -250,6 +288,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="To Date"
                             fullWidth
                             variant="standard"
+                            value={formFields.toDate}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -260,6 +300,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="13. Highest Certificate attained"
                             fullWidth
                             variant="standard"
+                            value={formFields.highestCertificate}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -270,6 +312,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="14. Have you received an acceptance letter?"
                             fullWidth
                             variant="standard"
+                            value={formFields.receivedAcceptanceLetter}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -280,6 +324,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="15. If your answer to (14) above was yes, name the institution you have been accepted:"
                             fullWidth
                             variant="standard"
+                            value={formFields.nameOfAcceptingInstitution}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -290,6 +336,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="16. What programme of study do you wish to pursue?"
                             fullWidth
                             variant="standard"
+                            value={formFields.programmeOfStudy}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -300,6 +348,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="17. Duration of programme."
                             fullWidth
                             variant="standard"
+                            value={formFields.programmeDuration}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -310,6 +360,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="18. Have you applied for or received any scholarship, bursary from any other organization or authority before?"
                             fullWidth
                             variant="standard"
+                            value={formFields.receivedSponsorshipBefore}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -320,6 +372,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="17. If your answer to 18 above was yes, give details."
                             fullWidth
                             variant="standard"
+                            value={formFields.otherSponsorshipDetails}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -330,6 +384,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="20. Have you ever benefitted from the CDF Skills Development Bursary sponsorship before?"
                             fullWidth
                             variant="standard"
+                            value={formFields.cdfSponsorship}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -340,6 +396,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="21. If your answer to 20 above was yes, give details of when and how you benefited"
                             fullWidth
                             variant="standard"
+                            value={formFields.cdfSponsorshipDetails}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                 </Grid>
@@ -355,16 +413,20 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="22. Surname"
                             fullWidth
                             variant="standard"
+                            value={formFields.gurdianSurname}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <TextField
                             required
                             id="gurdianOtherName"
-                            name="gurdianotherName"
+                            name="gurdianOtherName"
                             label="23. Other names"
                             fullWidth
                             variant="standard"
+                            value={formFields.gurdianOtherName}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -375,6 +437,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="24. Gender"
                             fullWidth
                             variant="standard"
+                            value={formFields.gurdianGender}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -385,6 +449,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="25. Date of birth"
                             fullWidth
                             variant="standard"
+                            value={formFields.gurdianDateOfBirth}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -395,6 +461,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="26. Nationality"
                             fullWidth
                             variant="standard"
+                            value={formFields.gurdianNationality}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -405,6 +473,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="27. N.R.C Number"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianNRC}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -415,6 +485,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="28. Relationship to applicant"
                             fullWidth
                             variant="standard"
+                            value={formFields.relationshipToApplicant}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -425,6 +497,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="29. village"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianVillage}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -435,6 +509,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="30. Chief"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianChief}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -445,6 +521,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="31. District"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianDistrict}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -455,6 +533,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="32. Residential Address"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianAddress}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -465,6 +545,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="33. Residential Address"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianConstituency}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -475,6 +557,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="34. District"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianDistrictDistrict}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -485,6 +569,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="35. Province"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianProvince}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -495,6 +581,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="36. Postal Address"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianPostalAddress}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -505,6 +593,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="37. Phone Number"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianPhoneNumber}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -515,6 +605,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="38. Email Address"
                             fullWidth
                             variant="standard"
+                            value={formFields.guardianEmail}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                 </Grid>
@@ -532,6 +624,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="a. Father"
                             fullWidth
                             variant="standard"
+                            value={formFields.occupationFather}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -541,6 +635,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="b. Mother"
                             fullWidth
                             variant="standard"
+                            value={formFields.occupationMother}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -550,6 +646,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="c. Guardian"
                             fullWidth
                             variant="standard"
+                            value={formFields.occupationGuardian}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -562,6 +660,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="a. Father"
                             fullWidth
                             variant="standard"
+                            value={formFields.employerFather}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -571,6 +671,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="b. Mother"
                             fullWidth
                             variant="standard"
+                            value={formFields.employerMother}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -580,6 +682,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="c. Guardian"
                             fullWidth
                             variant="standard"
+                            value={formFields.employerGuardian}
+                            onChange={handleOnChange}
                         />
                     </Grid>
 
@@ -594,6 +698,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="a. Father"
                             fullWidth
                             variant="standard"
+                            value={formFields.positionFather}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -603,6 +709,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="b. Mother"
                             fullWidth
                             variant="standard"
+                            value={formFields.positionMother}
+                            onChange={handleOnChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -612,6 +720,8 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="c. Guardian"
                             fullWidth
                             variant="standard"
+                            value={formFields.positionGuardian}
+                            onChange={handleOnChange}
                         />
                     </Grid>
 
@@ -636,15 +746,19 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             label="Signature of Applicant"
                             fullWidth
                             variant="standard"
+                           
+                            
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <TextField
-                            id="signingDate"
-                            name="signingDate"
+                            id="applicantSigningDate"
+                            name="applicantSigningDate"
                             label="Date"
                             fullWidth
                             variant="standard"
+                            value={formFields.applicantSigningDate}
+                            onChange={handleOnChange}
                         />
                     </Grid>
 
@@ -659,11 +773,14 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <TextField
-                            id="signingDateParentGuardian"
-                            name="signingDateParentGuardian"
+                            id="parentGurdianSigningDate"
+                            name="parentGurdianSigningDate"
                             label="Date"
                             fullWidth
                             variant="standard"
+                            value={formFields.parentGurdianSigningDate}
+                            onChange={handleOnChange}
+                            
                         />
                     </Grid>
                 </Grid>
