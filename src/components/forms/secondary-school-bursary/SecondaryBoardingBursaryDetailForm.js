@@ -5,7 +5,16 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
-export default function SecondaryBoardingBursaryDetailForm() {
+export default function SecondaryBoardingBursaryDetailForm({ formFields, setFormFields }) {
+
+  const handleOnChange = (e) => {
+    setFormFields((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -110,7 +119,7 @@ export default function SecondaryBoardingBursaryDetailForm() {
       <Typography variant="h6" gutterBottom>
         SECTION B: PROJECT IDENTIFICATION
       </Typography>
-         <Grid container spacing={3}>
+      <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <TextField
             required

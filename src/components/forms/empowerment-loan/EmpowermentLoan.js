@@ -14,24 +14,28 @@ import EmpowerementLoanAttachments from "./EmpowerementLoanAttachments";
 import EmpowerementLoanReview from "./EmpowerementLoanReview";
 
 const steps = ["Main", "Attachments", "Review your application"];
+const fields = {
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <EmpowerementLoanDetailForm />;
-    case 1:
-      return <EmpowerementLoanAttachments />;
-    case 2:
-      return <EmpowerementLoanReview />;
-    default:
-      throw new Error("Unknown step");
-  }
 };
 
 const theme = createTheme();
 
 const EmpowermentLoan = () => {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [formFields, setFormFields] = React.useState(fields);
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return <EmpowerementLoanDetailForm formFields={formFields} setFormFields={setFormFields}/>;
+      case 1:
+        return <EmpowerementLoanAttachments formFields={formFields} setFormFields={setFormFields}/>;
+      case 2:
+        return <EmpowerementLoanReview formFields={formFields}/>;
+      default:
+        throw new Error("Unknown step");
+    }
+  };
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);

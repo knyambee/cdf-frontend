@@ -5,7 +5,14 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-export default function PaymentForm() {
+export default function CommunityProjectAttachments({ formFields, setFormFields }) {
+  const handleOnChange = (e) => {
+    setFormFields((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -53,7 +60,7 @@ export default function PaymentForm() {
             variant="standard"
           />
         </Grid>
-   
+
       </Grid>
     </React.Fragment>
   );

@@ -14,24 +14,29 @@ import CommunityProjectReview from "./CommunityProjectReview";
 import CoatOfArms from "../../layout/CoatOfArms";
 
 const steps = ["Main", "Attachments", "Review your application"];
+const fields = {
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <CommunityProjectDetailForm />;
-    case 1:
-      return <CommunityProjectAttachments />;
-    case 2:
-      return <CommunityProjectReview />;
-    default:
-      throw new Error("Unknown step");
-  }
-}
+};
+
 
 const theme = createTheme();
 
 const CommunityProject = () => {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [formFields, setFormFields] = React.useState(fields);
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return <CommunityProjectDetailForm formFields={formFields} setFormFields={setFormFields}/>;
+      case 1:
+        return <CommunityProjectAttachments formFields={formFields} setFormFields={setFormFields}/>;
+      case 2:
+        return <CommunityProjectReview  formFields={formFields}/>;
+      default:
+        throw new Error("Unknown step");
+    }
+  }
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);

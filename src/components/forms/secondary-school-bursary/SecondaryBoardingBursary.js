@@ -14,24 +14,29 @@ import SecondaryBoardingBursaryAttachments from "./SecondaryBoardingBursaryAttac
 import SecondaryBoardingBursaryReview from "./SecondaryBoardingBursaryReview";
 
 const steps = ["Main", "Attachments", "Review your application"];
+const fields = {
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <SecondaryBoardingBursaryDetailForm />;
-    case 1:
-      return <SecondaryBoardingBursaryAttachments />;
-    case 2:
-      return <SecondaryBoardingBursaryReview />;
-    default:
-      throw new Error("Unknown step");
-  }
 };
 
 const theme = createTheme();
 
 const SecondaryBoardingBursary = () => {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [formFields, setFormFields] = React.useState(fields);
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return <SecondaryBoardingBursaryDetailForm formFields={formFields} setFormFields={setFormFields}/>;
+      case 1:
+        return <SecondaryBoardingBursaryAttachments formFields={formFields} setFormFields={setFormFields}/>;
+      case 2:
+        return <SecondaryBoardingBursaryReview formFields={formFields}/>;
+      default:
+        throw new Error("Unknown step");
+    }
+  };
+  
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);

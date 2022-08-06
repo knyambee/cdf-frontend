@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 
 export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFields }) {
-   
+
     const handleOnChange = (e) => {
         setFormFields((prevState) => ({
             ...prevState,

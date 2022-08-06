@@ -7,8 +7,6 @@ import Grid from '@mui/material/Grid';
 
 
 export default function SkillsTrainingBursaryReview({formFields}) {
-  console.log(formFields);
-  
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>

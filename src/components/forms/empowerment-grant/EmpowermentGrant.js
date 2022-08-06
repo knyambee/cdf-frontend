@@ -14,24 +14,29 @@ import EmpowerementGrantAttachments from "./EmpowerementGrantAttachments";
 import EmpowerementGrantDetailForm from "./EmpowerementGrantDetailForm";
 
 const steps = ["Main", "Attachments", "Review your application"];
+const fields = {
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <EmpowerementGrantDetailForm />;
-    case 1:
-      return <EmpowerementGrantAttachments />;
-    case 2:
-      return <EmporwementGrantReview />;
-    default:
-      throw new Error("Unknown step");
-  }
 };
 
 const theme = createTheme();
 
 const EmpowermentGrant = () => {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [formFields, setFormFields] = React.useState(fields);
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return <EmpowerementGrantDetailForm formFields={formFields} setFormFields={setFormFields}/>;
+      case 1:
+        return <EmpowerementGrantAttachments formFields={formFields} setFormFields={setFormFields}/>;
+      case 2:
+        return <EmporwementGrantReview formFields={formFields}/>;
+      default:
+        throw new Error("Unknown step");
+    }
+  };
+  
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);

@@ -20,7 +20,6 @@ const fields = {
   nrc: [],
 };
 
-
 const theme = createTheme();
 
 const SkillsTrainingBursary = () => {
@@ -41,7 +40,6 @@ const SkillsTrainingBursary = () => {
   function getStepContent(step) {
     switch (step) {
       case 0:
-        console.log(formFields);
         return <SkillsTrainingBursaryDetailForm formFields={formFields} setFormFields={setFormFields} />;
       case 1:
         return <SkillsTrainingBursaryAttachments formFields={formFields} setFormFields={setFormFields} />;

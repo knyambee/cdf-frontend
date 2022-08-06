@@ -3,7 +3,15 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 
-export default function EmpowerementGrantAttachments() {
+export default function EmpowerementGrantAttachments({ formFields, setFormFields }) {
+
+  const handleOnChange = (e) => {
+    setFormFields((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+  
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -51,7 +59,7 @@ export default function EmpowerementGrantAttachments() {
             variant="standard"
           />
         </Grid>
-   
+
       </Grid>
     </React.Fragment>
   );
