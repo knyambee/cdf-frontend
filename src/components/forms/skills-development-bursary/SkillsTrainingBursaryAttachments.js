@@ -3,9 +3,18 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 
-export default function SkillsTrainingBursaryAttachments() {
+export default function SkillsTrainingBursaryAttachments({formFields, setFormFields}) {
+  const handleOnChange = (e) => {
+      setFormFields((prevState) => ({
+          ...prevState,
+          [e.target.name]: e.target.value,
+      }));
+  };
+
+
   return (
     <React.Fragment>
+      <form>
       <Typography variant="h6" gutterBottom>
         Supporting Documents
       </Typography>
@@ -14,6 +23,8 @@ export default function SkillsTrainingBursaryAttachments() {
           <TextField
             required
             id="nrc"
+            value={formFields.nrc}
+            onChange={handleOnChange}
             fullWidth
             variant="standard"
             type="file"
@@ -54,6 +65,7 @@ export default function SkillsTrainingBursaryAttachments() {
           />
         </Grid>
       </Grid>
+      </form>
     </React.Fragment>
   );
 }

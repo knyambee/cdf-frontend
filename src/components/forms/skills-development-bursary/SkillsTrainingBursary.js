@@ -14,32 +14,43 @@ import SkillsTrainingBursaryReview from "./SkillsTrainingBursaryReview";
 import CoatOfArms from "../../layout/CoatOfArms";
 
 const steps = ["Main", "Attachments", "Review your application"];
+const fields = {
+  surname: '',
+  otherNames: '',
+  nrc: [],
+};
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <SkillsTrainingBursaryDetailForm />;
-    case 1:
-      return <SkillsTrainingBursaryAttachments />;
-    case 2:
-      return <SkillsTrainingBursaryReview />;
-    default:
-      throw new Error("Unknown step");
-  }
-}
 
 const theme = createTheme();
 
 const SkillsTrainingBursary = () => {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [formFields, setFormFields] = React.useState(fields);
 
-  const handleNext = () => {
+  const handleNext = (e) => {
     setActiveStep(activeStep + 1);
+    if (activeStep === steps.length - 1) {
+      console.log(`This is where I will post ${formFields} to the backend`)
+    }
   };
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        console.log(formFields);
+        return <SkillsTrainingBursaryDetailForm formFields={formFields} setFormFields={setFormFields} />;
+      case 1:
+        return <SkillsTrainingBursaryAttachments formFields={formFields} setFormFields={setFormFields} />;
+      case 2:
+        return <SkillsTrainingBursaryReview formFields={formFields} />;
+      default:
+        throw new Error("Unknown step");
+    }
+  }
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="md" sx={{ mb: 8 }}>
@@ -47,7 +58,7 @@ const SkillsTrainingBursary = () => {
           variant="outlined"
           sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
         >
-         <CoatOfArms />
+          <CoatOfArms />
           <Typography component="h1" variant="h4" align="center">
             CONSTITUENCY DEVELOPMENT FUND SKILLS DEVELOPMENT BURSARY APPLICATION
             FORM
