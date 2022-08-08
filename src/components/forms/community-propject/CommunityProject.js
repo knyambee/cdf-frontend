@@ -12,12 +12,10 @@ import CommunityProjectDetailForm from "./CommunityProjectDetailForm";
 import CommunityProjectAttachments from "./CommunityProjectAttachments";
 import CommunityProjectReview from "./CommunityProjectReview";
 import CoatOfArms from "../../layout/CoatOfArms";
+import {fields} from './communityProjectsBlankForm';
+import api from '../../../api/api';
 
 const steps = ["Main", "Attachments", "Review your application"];
-const fields = {
-
-};
-
 
 const theme = createTheme();
 
@@ -38,13 +36,26 @@ const CommunityProject = () => {
     }
   }
 
-  const handleNext = () => {
+  const handleNext = (e) => {
     setActiveStep(activeStep + 1);
+    if (activeStep === steps.length - 1) {
+      handleSubmitApplication();
+    }
   };
-
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+  const handleSubmitApplication = () => {
+    try {
+      api.post('/communityprojects', formFields);
+    } catch (err) {
+      console.log(`Error ${err.message}`);
+    }
+  }
+
+
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="md" sx={{ mb: 8 }}>

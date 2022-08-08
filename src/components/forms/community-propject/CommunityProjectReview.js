@@ -6,6 +6,9 @@ import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
 
 export default function Review({formFields}) {
+
+  console.log(formFields);
+  
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
