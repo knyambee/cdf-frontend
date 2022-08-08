@@ -187,7 +187,7 @@ export default function SkillsTrainingBursaryDetailForm({ formFields, setFormFie
                             required
                             id="orphanStatus"
                             name="orphanStatus"
-                            label="(a)Single Orphan/Double Orphan/Other (please Specify)"
+                            label="(a) Single Orphan / Double Orphan / Other (please Specify)"
                             fullWidth
                             variant="standard"
                             value={formFields.opharnStatus}

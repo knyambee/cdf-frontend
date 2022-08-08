@@ -13,6 +13,7 @@ import SkillsTrainingBursaryAttachments from "./SkillsTrainingBursaryAttachments
 import SkillsTrainingBursaryReview from "./SkillsTrainingBursaryReview";
 import CoatOfArms from "../../layout/CoatOfArms";
 import {fields} from './skillsTrainingBursaryBlankForm';
+import api from '../../../api/skillsTrainingBursaryApi';
 
 const steps = ["Main", "Attachments", "Review your application"];
 const blankForm = fields;
@@ -26,13 +27,21 @@ const SkillsTrainingBursary = () => {
   const handleNext = (e) => {
     setActiveStep(activeStep + 1);
     if (activeStep === steps.length - 1) {
-      console.log(`This is where I will post ${formFields} to the backend`)
+      handleSubmitApplication();
     }
   };
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+  const handleSubmitApplication = () => {
+    try {
+      api.post('/skillstrainingbursary', formFields);
+    } catch (err) {
+      console.log(`Error ${err.message}`);
+    }
+  }
 
   function getStepContent(step) {
     switch (step) {
