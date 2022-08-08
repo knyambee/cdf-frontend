@@ -36,8 +36,8 @@ export default function SkillsTrainingBursaryAttachments({ formFields, setFormFi
             <TextField
               required
               id="disabilityCard"
+              name="disabilityCard"
               fullWidth
-              autoComplete="cc-number"
               variant="standard"
               type="file"
               helperText="Disability card or letter from the hospital denoting disability."
@@ -47,6 +47,7 @@ export default function SkillsTrainingBursaryAttachments({ formFields, setFormFi
             <TextField
               required
               id="recommendationLetter"
+              name="recommendationLetter"
               fullWidth
               variant="standard"
               type="file"
@@ -58,9 +59,9 @@ export default function SkillsTrainingBursaryAttachments({ formFields, setFormFi
             <TextField
               required
               id="certificates"
+              name="certificates"
               helperText="A full Grade 12 School Certificate or GCE five (5), O-levels or equivalent or Grade 9 or 7 Certificates. "
               fullWidth
-              autoComplete="cc-csc"
               variant="standard"
               type="file"
             />
