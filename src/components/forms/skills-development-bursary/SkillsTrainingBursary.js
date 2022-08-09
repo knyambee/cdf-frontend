@@ -13,7 +13,7 @@ import SkillsTrainingBursaryAttachments from "./SkillsTrainingBursaryAttachments
 import SkillsTrainingBursaryReview from "./SkillsTrainingBursaryReview";
 import CoatOfArms from "../../layout/CoatOfArms";
 import {fields} from './skillsTrainingBursaryBlankForm';
-import api from '../../../api/skillsTrainingBursaryApi';
+import api from '../../../api/api';
 
 const steps = ["Main", "Attachments", "Review your application"];
 const blankForm = fields;
