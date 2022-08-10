@@ -24,6 +24,7 @@ export default function SecondaryBoardingBursaryAttachments({ formFields, setFor
                 fullWidth
                 variant="standard"
                 type="file"
+                onChange={handleOnChange}
             />
           </Grid>
         </Grid>

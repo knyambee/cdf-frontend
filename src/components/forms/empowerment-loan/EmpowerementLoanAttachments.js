@@ -24,6 +24,7 @@ export default function EmpowerementLoanAttachments({ formFields, setFormFields 
             fullWidth
             variant="standard"
             type="file"
+            onChange={handleOnChange}
           />
         </Grid>
       </Grid>

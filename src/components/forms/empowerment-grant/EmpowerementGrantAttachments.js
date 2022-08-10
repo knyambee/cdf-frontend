@@ -26,6 +26,7 @@ export default function EmpowerementGrantAttachments({ formFields, setFormFields
             fullWidth
             variant="standard"
             type="file"
+            onChange={handleOnChange}
           />
         </Grid>
       </Grid>
