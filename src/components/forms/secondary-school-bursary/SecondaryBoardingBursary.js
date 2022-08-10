@@ -14,9 +14,7 @@ import SecondaryBoardingBursaryAttachments from "./SecondaryBoardingBursaryAttac
 import SecondaryBoardingBursaryReview from "./SecondaryBoardingBursaryReview";
 
 const steps = ["Main", "Attachments", "Review your application"];
-const fields = {
-
-};
+const fields = {};
 
 const theme = createTheme();
 
@@ -27,16 +25,25 @@ const SecondaryBoardingBursary = () => {
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <SecondaryBoardingBursaryDetailForm formFields={formFields} setFormFields={setFormFields}/>;
+        return (
+          <SecondaryBoardingBursaryDetailForm
+            formFields={formFields}
+            setFormFields={setFormFields}
+          />
+        );
       case 1:
-        return <SecondaryBoardingBursaryAttachments formFields={formFields} setFormFields={setFormFields}/>;
+        return (
+          <SecondaryBoardingBursaryAttachments
+            formFields={formFields}
+            setFormFields={setFormFields}
+          />
+        );
       case 2:
-        return <SecondaryBoardingBursaryReview formFields={formFields}/>;
+        return <SecondaryBoardingBursaryReview formFields={formFields} />;
       default:
         throw new Error("Unknown step");
     }
-  };
-  
+  }
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -54,7 +61,8 @@ const SecondaryBoardingBursary = () => {
         >
           <CoatOfArms />
           <Typography component="h1" variant="h4" align="center">
-          CONSTITUENCY DEVELOPMENT FUND (CDF) SECONDARY BOARDING SCHOOL BURSARY APPLICATION FORM
+            CONSTITUENCY DEVELOPMENT FUND (CDF) SECONDARY BOARDING SCHOOL
+            BURSARY APPLICATION FORM
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
@@ -68,10 +76,6 @@ const SecondaryBoardingBursary = () => {
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
                   Thank you for your application.
-                </Typography>
-                <Typography variant="subtitle1">
-                  Your application reference number is #2001539. We have emailed your application
-                  confirmation, and will send you an update when your application has been completed.
                 </Typography>
               </React.Fragment>
             ) : (
@@ -89,7 +93,9 @@ const SecondaryBoardingBursary = () => {
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
                   >
-                    {activeStep === steps.length - 1 ? "Submit application" : "Next"}
+                    {activeStep === steps.length - 1
+                      ? "Submit application"
+                      : "Next"}
                   </Button>
                 </Box>
               </React.Fragment>

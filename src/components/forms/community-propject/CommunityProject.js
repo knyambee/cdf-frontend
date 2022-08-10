@@ -12,8 +12,8 @@ import CommunityProjectDetailForm from "./CommunityProjectDetailForm";
 import CommunityProjectAttachments from "./CommunityProjectAttachments";
 import CommunityProjectReview from "./CommunityProjectReview";
 import CoatOfArms from "../../layout/CoatOfArms";
-import {fields} from './communityProjectsBlankForm';
-import api from '../../../api/api';
+import { fields } from "./communityProjectsBlankForm";
+import api from "../../../api/api";
 
 const steps = ["Main", "Attachments", "Review your application"];
 
@@ -26,11 +26,21 @@ const CommunityProject = () => {
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <CommunityProjectDetailForm formFields={formFields} setFormFields={setFormFields}/>;
+        return (
+          <CommunityProjectDetailForm
+            formFields={formFields}
+            setFormFields={setFormFields}
+          />
+        );
       case 1:
-        return <CommunityProjectAttachments formFields={formFields} setFormFields={setFormFields}/>;
+        return (
+          <CommunityProjectAttachments
+            formFields={formFields}
+            setFormFields={setFormFields}
+          />
+        );
       case 2:
-        return <CommunityProjectReview  formFields={formFields}/>;
+        return <CommunityProjectReview formFields={formFields} />;
       default:
         throw new Error("Unknown step");
     }
@@ -48,13 +58,11 @@ const CommunityProject = () => {
 
   const handleSubmitApplication = () => {
     try {
-      api.post('/communityprojects', formFields);
+      api.post("/communityprojects", formFields);
     } catch (err) {
       console.log(`Error ${err.message}`);
     }
-  }
-
-
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -80,11 +88,6 @@ const CommunityProject = () => {
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
                   Thank you for your application.
-                </Typography>
-                <Typography variant="subtitle1">
-                  Your application reference number is #2001539. We have emailed
-                  your application confirmation, and will send you an update
-                  when your application has been completed.
                 </Typography>
               </React.Fragment>
             ) : (

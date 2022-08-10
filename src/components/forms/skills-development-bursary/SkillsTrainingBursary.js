@@ -80,11 +80,6 @@ const SkillsTrainingBursary = () => {
                 <Typography variant="h5" gutterBottom>
                   Thank you for your application.
                 </Typography>
-                <Typography variant="subtitle1">
-                  Your application reference number is #2001539. We have emailed
-                  your application confirmation, and will send you an update
-                  when your application has been completed.
-                </Typography>
               </React.Fragment>
             ) : (
               <React.Fragment>

@@ -8,15 +8,14 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import EmporwementGrantReview from './EmpowerementGrantReview'
+import EmporwementGrantReview from "./EmpowerementGrantReview";
 import CoatOfArms from "../../layout/CoatOfArms";
 import EmpowerementGrantAttachments from "./EmpowerementGrantAttachments";
 import EmpowerementGrantDetailForm from "./EmpowerementGrantDetailForm";
+import api from "../../../api/api";
 
 const steps = ["Main", "Attachments", "Review your application"];
-const fields = {
-
-};
+const fields = {};
 
 const theme = createTheme();
 
@@ -27,24 +26,45 @@ const EmpowermentGrant = () => {
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <EmpowerementGrantDetailForm formFields={formFields} setFormFields={setFormFields}/>;
+        return (
+          <EmpowerementGrantDetailForm
+            formFields={formFields}
+            setFormFields={setFormFields}
+          />
+        );
       case 1:
-        return <EmpowerementGrantAttachments formFields={formFields} setFormFields={setFormFields}/>;
+        return (
+          <EmpowerementGrantAttachments
+            formFields={formFields}
+            setFormFields={setFormFields}
+          />
+        );
       case 2:
-        return <EmporwementGrantReview formFields={formFields}/>;
+        return <EmporwementGrantReview formFields={formFields} />;
       default:
         throw new Error("Unknown step");
     }
-  };
-  
+  }
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
+    if (activeStep === steps.length - 1) {
+      handleSubmitApplication();
+    }
   };
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+  const handleSubmitApplication = () => {
+    try {
+      api.post("/empowermentgrants", formFields);
+    } catch (err) {
+      console.log(`Error ${err.message}`);
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="md" sx={{ mb: 8 }}>
@@ -54,7 +74,8 @@ const EmpowermentGrant = () => {
         >
           <CoatOfArms />
           <Typography component="h1" variant="h4" align="center">
-          CONSTITUENCY DEVELOPMENT FUND (CDF) GRANT APPLICATION FORM FOR YOUTH, WOMEN AND COMMUNITY EMPOWERMENT
+            CONSTITUENCY DEVELOPMENT FUND (CDF) GRANT APPLICATION FORM FOR
+            YOUTH, WOMEN AND COMMUNITY EMPOWERMENT
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
@@ -68,10 +89,6 @@ const EmpowermentGrant = () => {
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
                   Thank you for your application.
-                </Typography>
-                <Typography variant="subtitle1">
-                  Your application reference number is #2001539. We have emailed your application
-                  confirmation, and will send you an update when your application has been completed.
                 </Typography>
               </React.Fragment>
             ) : (
@@ -89,7 +106,9 @@ const EmpowermentGrant = () => {
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
                   >
-                    {activeStep === steps.length - 1 ? "Submit application" : "Next"}
+                    {activeStep === steps.length - 1
+                      ? "Submit application"
+                      : "Next"}
                   </Button>
                 </Box>
               </React.Fragment>

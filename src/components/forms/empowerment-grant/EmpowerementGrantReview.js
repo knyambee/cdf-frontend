@@ -5,7 +5,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
 
-export default function EmpowerementGrantReview({formFields}) {
+export default function EmpowerementGrantReview({formFields}) {  
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>

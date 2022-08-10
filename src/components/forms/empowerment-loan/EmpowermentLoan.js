@@ -12,12 +12,10 @@ import CoatOfArms from "../../layout/CoatOfArms";
 import EmpowerementLoanDetailForm from "./EmpowerementLoanDetailForm";
 import EmpowerementLoanAttachments from "./EmpowerementLoanAttachments";
 import EmpowerementLoanReview from "./EmpowerementLoanReview";
+import { fields } from "./empowermentLoanBlankForm";
+import api from "../../../api/api";
 
 const steps = ["Main", "Attachments", "Review your application"];
-const fields = {
-
-};
-
 const theme = createTheme();
 
 const EmpowermentLoan = () => {
@@ -27,22 +25,43 @@ const EmpowermentLoan = () => {
   function getStepContent(step) {
     switch (step) {
       case 0:
-        return <EmpowerementLoanDetailForm formFields={formFields} setFormFields={setFormFields}/>;
+        return (
+          <EmpowerementLoanDetailForm
+            formFields={formFields}
+            setFormFields={setFormFields}
+          />
+        );
       case 1:
-        return <EmpowerementLoanAttachments formFields={formFields} setFormFields={setFormFields}/>;
+        return (
+          <EmpowerementLoanAttachments
+            formFields={formFields}
+            setFormFields={setFormFields}
+          />
+        );
       case 2:
-        return <EmpowerementLoanReview formFields={formFields}/>;
+        return <EmpowerementLoanReview formFields={formFields} />;
       default:
         throw new Error("Unknown step");
     }
-  };
+  }
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
+    if (activeStep === steps.length - 1) {
+      handleSubmitApplication();
+    }
   };
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
+  };
+
+  const handleSubmitApplication = () => {
+    try {
+      api.post("/empowermentloans", formFields);
+    } catch (err) {
+      console.log(`Error ${err.message}`);
+    }
   };
   return (
     <ThemeProvider theme={theme}>
@@ -53,7 +72,7 @@ const EmpowermentLoan = () => {
         >
           <CoatOfArms />
           <Typography component="h1" variant="h4" align="center">
-          CONSTITUENCY DEVELOPMENT FUND (CDF) LOAN AGREEMENT FORM
+            CONSTITUENCY DEVELOPMENT FUND (CDF) LOAN AGREEMENT FORM
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
@@ -67,10 +86,6 @@ const EmpowermentLoan = () => {
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
                   Thank you for your application.
-                </Typography>
-                <Typography variant="subtitle1">
-                  Your application reference number is #2001539. We have emailed your application
-                  confirmation, and will send you an update when your application has been completed.
                 </Typography>
               </React.Fragment>
             ) : (
@@ -88,7 +103,9 @@ const EmpowermentLoan = () => {
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
                   >
-                    {activeStep === steps.length - 1 ? "Submit application" : "Next"}
+                    {activeStep === steps.length - 1
+                      ? "Submit application"
+                      : "Next"}
                   </Button>
                 </Box>
               </React.Fragment>
