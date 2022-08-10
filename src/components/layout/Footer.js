@@ -19,7 +19,7 @@ const Footer = (props) => {
   return (
     <Container maxWidth="sm">
       <Typography variant="body1" align="center">
-        Ministry of Local Government and Rural Development
+        Targeted For Ministry of Local Government and Rural Development
       </Typography>
       <Copyright />
     </Container>
