@@ -6,7 +6,7 @@ import Guide from "./components/pages/Guide";
 import Apply from "./components/pages/Apply";
 import Constituency from "./components/pages/Constituency";
 import Missing from "./components/pages/Missing";
-import { Route, Routes, useHistory } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
