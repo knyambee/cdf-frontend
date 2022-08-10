@@ -30,7 +30,7 @@ export default function EmpowerementLoanDetailForm({
               value={formFields.borrowingDate}
               onChange={handleOnChange}
             ></TextField>
-            , between
+            , between 
             <TextField
               variant="standard"
               sm={4}
