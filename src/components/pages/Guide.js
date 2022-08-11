@@ -2,7 +2,7 @@ import React from 'react'
 
 const Guide = () => {
   return (
-    <main>Guide</main>
+    <main>Guide to CDF</main>
   )
 }
 
