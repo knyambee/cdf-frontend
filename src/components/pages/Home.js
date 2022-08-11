@@ -14,16 +14,6 @@ import Container from "@mui/material/Container";
 
 const tiers = [
   {
-    title: "Community Projects",
-    year: "2023",
-    description: [
-      "Projects which are identified by the communities in their Wards for the benefit of the wider community.",
-    ],
-    buttonText: "Apply",
-    buttonVariant: "contained",
-    ref: "/community-project",
-  },
-  {
     title: "Skills Development Bursary",
     year: "2023",
     description: [
@@ -52,6 +42,16 @@ const tiers = [
     buttonText: "Apply",
     buttonVariant: "contained",
     ref: "/empowerment-loan",
+  },
+  {
+    title: "Community Projects",
+    year: "2023",
+    description: [
+      "Projects which are identified by the communities in their Wards for the benefit of the wider community.",
+    ],
+    buttonText: "Apply",
+    buttonVariant: "contained",
+    ref: "/community-project",
   },
 ];
 
@@ -84,8 +84,7 @@ const Home = () => {
           color="text.secondary"
           component="p"
         >
-          Access to Community Development Funding (CDF) has never been bigger
-          and easy. Apply for funding in your Constituency.
+          Access to Community Development Funding (CDF) has never been this easy. Learn more and Apply for funding in your Constituency.
         </Typography>
       </Container>
       {/* End hero unit */}
@@ -105,7 +104,9 @@ const Home = () => {
                   title={tier.title}
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: "center" }}
-                  action={tier.title === "Community Projects" ? <StarIcon /> : null}
+                  action={
+                    tier.title === "Community Projects" ? <StarIcon /> : null
+                  }
                   subheaderTypographyProps={{
                     align: "center",
                   }}
@@ -151,8 +152,12 @@ const Home = () => {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant} href={tier.ref}>
-                    {tier.buttonText} 
+                  <Button
+                    fullWidth
+                    variant={tier.buttonVariant}
+                    href={tier.ref}
+                  >
+                    {tier.buttonText}
                   </Button>
                 </CardActions>
               </Card>
