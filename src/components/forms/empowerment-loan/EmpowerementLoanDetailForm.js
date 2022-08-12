@@ -361,17 +361,7 @@ export default function EmpowerementLoanDetailForm({
           </Grid>
           <Grid>
             <Typography component="h1">
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DatePicker
-                  label="Date"
-                  inputFormat="MM/dd/yyyy"
-                  value={dateSignedFinancialInstitutionValue}
-                  onChange={(newValue) => {
-                    setDateSignedFinancialInstitutionValue(newValue);
-                  }}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-              </LocalizationProvider>
+              
             </Typography>
           </Grid>
         </Grid>

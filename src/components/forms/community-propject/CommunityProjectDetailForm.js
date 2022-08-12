@@ -10,12 +10,18 @@ export default function CommunityProjectDetailForm({
   formFields,
   setFormFields,
 }) {
+  const [dateSignedProposerValue, setDateSignedProposerValue] = React.useState(null);
+  const [dateSignedSeconderValue, setDateSignedSeconderValue]= React.useState(null);
+
   const handleOnChange = (e) => {
     setFormFields((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
+
+  formFields.dateSignedProposer = dateSignedProposerValue;
+  formFields.dateSignedSeconder = dateSignedSeconderValue;
 
   return (
     <React.Fragment>
@@ -296,15 +302,17 @@ export default function CommunityProjectDetailForm({
             value={formFields.phoneProjectProposer}
             onChange={handleOnChange}
           />
-         <TextField
-            id="dateSignedProposer"
-            name="dateSignedProposer"
-            label="Date"
-            fullWidth
-            variant="standard"
-            value={formFields.dateSignedProposer}
-            onChange={handleOnChange}
-          />
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <DatePicker
+                  label="Date"
+                  inputFormat="MM/dd/yyyy"
+                  value={dateSignedProposerValue}
+                  onChange={(newValue) => {
+                    setDateSignedProposerValue(newValue);
+                  }}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </LocalizationProvider>
         </Grid>
 
         <Grid item xs={12} sm={6}>
@@ -345,15 +353,17 @@ export default function CommunityProjectDetailForm({
             value={formFields.phoneProjectSeconder}
             onChange={handleOnChange}
           />
-          <TextField
-            id="dateSignedSeconder"
-            name="dateSignedSeconder"
-            label="Date"
-            fullWidth
-            variant="standard"
-            value={formFields.dateSignedSeconder}
-            onChange={handleOnChange}
-          />
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <DatePicker
+                  label="Date"
+                  inputFormat="MM/dd/yyyy"
+                  value={dateSignedSeconderValue}
+                  onChange={(newValue) => {
+                    setDateSignedSeconderValue(newValue);
+                  }}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </LocalizationProvider>
         </Grid>
       </Grid>
     </React.Fragment>
