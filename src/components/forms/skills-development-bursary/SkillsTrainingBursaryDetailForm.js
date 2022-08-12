@@ -2,11 +2,24 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 export default function SkillsTrainingBursaryDetailForm({
   formFields,
   setFormFields,
 }) {
+  const [dateOfBirthValue, setDateOfBirthValue] = React.useState(null);
+  const [fromDateValue, setFromDateValue] = React.useState(null);
+  const [toDateValue, setToDateValue] = React.useState(null);
+  const [gurdianDateOfBirthValue, setGurdianDateOfBirthValue] =
+    React.useState(null);
+  const [parentGuardianSigningDateValue, setParentGuardianSigningDateValue] =
+    React.useState(null);
+  const [applicantSigningDateValue, setApplicantSigningDateValue] =
+    React.useState(null);
+
   const handleOnChange = (e) => {
     setFormFields((prevState) => ({
       ...prevState,
@@ -14,6 +27,13 @@ export default function SkillsTrainingBursaryDetailForm({
     }));
   };
 
+  // update blankForm
+  formFields.dateOfBirth = dateOfBirthValue;
+  formFields.fromDate = fromDateValue;
+  formFields.toDate = toDateValue;
+  formFields.guardianDateOfBirth = gurdianDateOfBirthValue;
+  formFields.parentGuardianSigningDate = parentGuardianSigningDateValue;
+  formFields.applicantSigningDate = applicantSigningDateValue;
   return (
     <React.Fragment>
       <form>
@@ -81,16 +101,17 @@ export default function SkillsTrainingBursaryDetailForm({
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="dateOfBirth"
-              name="dateOfBirth"
-              label="5. Date of birth"
-              fullWidth
-              variant="standard"
-              value={formFields.dateOfBirth}
-              onChange={handleOnChange}
-            />
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                label="5. Date of birth"
+                inputFormat="MM/dd/yyyy"
+                value={dateOfBirthValue}
+                onChange={(newValue) => {
+                  setDateOfBirthValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -150,7 +171,6 @@ export default function SkillsTrainingBursaryDetailForm({
           </Grid>
           <Grid item xs={12}>
             <TextField
-              required
               id="postalAddress"
               name="postalAddress"
               label="7. Postal Address"
@@ -162,12 +182,12 @@ export default function SkillsTrainingBursaryDetailForm({
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              required
               id="mobilePhone"
               name="mobilePhone"
               label="8. Mobile Phone"
               fullWidth
               variant="standard"
+              type="phone"
               value={formFields.mobilePhone}
               onChange={handleOnChange}
             />
@@ -178,6 +198,7 @@ export default function SkillsTrainingBursaryDetailForm({
               id="email"
               name="email"
               label="Email"
+              type="email"
               fullWidth
               variant="standard"
               value={formFields.email}
@@ -274,26 +295,30 @@ export default function SkillsTrainingBursaryDetailForm({
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              id="fromDate"
-              name="fromDate"
-              label="12. From Date"
-              fullWidth
-              variant="standard"
-              value={formFields.fromDate}
-              onChange={handleOnChange}
-            />
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                label="12. From Date"
+                inputFormat="MM/dd/yyyy"
+                value={fromDateValue}
+                onChange={(newValue) => {
+                  setFromDateValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              id="toDate"
-              name="toDate"
-              label="To Date"
-              fullWidth
-              variant="standard"
-              value={formFields.toDate}
-              onChange={handleOnChange}
-            />
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                label="To Date"
+                inputFormat="MM/dd/yyyy"
+                value={toDateValue}
+                onChange={(newValue) => {
+                  setToDateValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
           </Grid>
           <Grid item xs={12}>
             <TextField
@@ -446,16 +471,17 @@ export default function SkillsTrainingBursaryDetailForm({
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              required
-              id="gurdianDateOfBirth"
-              name="gurdianDateOfBirth"
-              label="25. Date of birth"
-              fullWidth
-              variant="standard"
-              value={formFields.gurdianDateOfBirth}
-              onChange={handleOnChange}
-            />
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                label="25. Date of birth"
+                inputFormat="MM/dd/yyyy"
+                value={gurdianDateOfBirthValue}
+                onChange={(newValue) => {
+                  setGurdianDateOfBirthValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
           </Grid>
           <Grid item xs={12}>
             <TextField
@@ -597,6 +623,7 @@ export default function SkillsTrainingBursaryDetailForm({
               label="37. Phone Number"
               fullWidth
               variant="standard"
+              type="phone"
               value={formFields.guardianPhoneNumber}
               onChange={handleOnChange}
             />
@@ -609,6 +636,7 @@ export default function SkillsTrainingBursaryDetailForm({
               label="38. Email Address"
               fullWidth
               variant="standard"
+              type="email"
               value={formFields.guardianEmail}
               onChange={handleOnChange}
             />
@@ -728,12 +756,26 @@ export default function SkillsTrainingBursaryDetailForm({
           PART E: DECLARATION
         </Typography>
         <Typography component="h1">
-          I <TextField variant="standard" id="applicantNameDecl" name="applicantNameDecl"> </TextField>of NRC number
-           <TextField variant="standard" id="applicantNRCDecl" name="applicantNRCDecl"> </TextField> do declare that to the
-          best of my knowledge, the information I have given is the absolute
-          truth. I also understand that any false information on this form will
-          lead to immediate forfeiture of this assistance and possible
-          prosecution or both.
+          I{" "}
+          <TextField
+            variant="standard"
+            id="applicantNameDecl"
+            name="applicantNameDecl"
+          >
+            {" "}
+          </TextField>
+          of NRC number
+          <TextField
+            variant="standard"
+            id="applicantNRCDecl"
+            name="applicantNRCDecl"
+          >
+            {" "}
+          </TextField>{" "}
+          do declare that to the best of my knowledge, the information I have
+          given is the absolute truth. I also understand that any false
+          information on this form will lead to immediate forfeiture of this
+          assistance and possible prosecution or both.
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
@@ -746,15 +788,17 @@ export default function SkillsTrainingBursaryDetailForm({
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              id="applicantSigningDate"
-              name="applicantSigningDate"
-              label="Date"
-              fullWidth
-              variant="standard"
-              value={formFields.applicantSigningDate}
-              onChange={handleOnChange}
-            />
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                label="Date"
+                inputFormat="MM/dd/yyyy"
+                value={applicantSigningDateValue}
+                onChange={(newValue) => {
+                  setApplicantSigningDateValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
           </Grid>
 
           <Grid item xs={12} sm={6}>
@@ -767,15 +811,17 @@ export default function SkillsTrainingBursaryDetailForm({
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              id="parentGurdianSigningDate"
-              name="parentGurdianSigningDate"
-              label="Date"
-              fullWidth
-              variant="standard"
-              value={formFields.parentGurdianSigningDate}
-              onChange={handleOnChange}
-            />
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                label="Date"
+                inputFormat="MM/dd/yyyy"
+                value={parentGuardianSigningDateValue}
+                onChange={(newValue) => {
+                  setParentGuardianSigningDateValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
           </Grid>
         </Grid>
       </form>
