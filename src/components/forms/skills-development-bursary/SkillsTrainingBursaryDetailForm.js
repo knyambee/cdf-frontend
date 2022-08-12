@@ -764,7 +764,7 @@ export default function SkillsTrainingBursaryDetailForm({
           >
             {" "}
           </TextField>
-          of NRC number
+          of NRC number {" "}
           <TextField
             variant="standard"
             id="applicantNRCDecl"

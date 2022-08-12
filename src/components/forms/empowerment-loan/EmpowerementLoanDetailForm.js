@@ -42,7 +42,7 @@ export default function EmpowerementLoanDetailForm({
               value={formFields.borrowingDate}
               onChange={handleOnChange}
             ></TextField>
-            , between
+            , between {" "}
             <TextField
               variant="standard"
               sm={4}
@@ -99,7 +99,7 @@ export default function EmpowerementLoanDetailForm({
         </Grid>
         <Grid item xs={12}>
           <Typography component="h1">
-            The Lender agrees to give loan funds/material/equipment worth ZMK
+            The Lender agrees to give loan funds/material/equipment worth ZMK {" "}
             <TextField
               variant="standard"
               sm={4}
@@ -109,7 +109,7 @@ export default function EmpowerementLoanDetailForm({
               onChange={handleOnChange}
             ></TextField>{" "}
             on loan basis to the Beneficiary for purposes of venturing
-            information
+            information {" "}
             <TextField
               variant="standard"
               sm={4}
@@ -159,7 +159,7 @@ export default function EmpowerementLoanDetailForm({
         <Grid item xs={12}>
           <Typography variant="h6">a) Payback Period</Typography>
           <Typography component="h1">
-            The payback period for the loan shall be
+            The payback period for the loan shall be {" "}
             <TextField
               variant="standard"
               sm={6}
@@ -225,7 +225,7 @@ export default function EmpowerementLoanDetailForm({
                 ></TextField>
               </li>
               <li>
-                E-Wallet
+                E-Wallet {" "}
                 <TextField
                   variant="standard"
                   sm={8}
