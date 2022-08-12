@@ -3,7 +3,6 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Guide from "./components/pages/Guide";
-import Constituency from "./components/pages/Constituency";
 import Missing from "./components/pages/Missing";
 import { Route, Routes } from "react-router-dom";
 import CommunityProject from "./components/forms/community-propject/CommunityProject";
@@ -24,7 +23,6 @@ function App() {
       <NavBar2 />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="Constituency" element={<Constituency />}></Route>
         <Route path="Guide" element={<Guide />}></Route>
         <Route path="About" element={<About />}></Route>
         <Route path="community-project" element={<CommunityProject />}></Route>
