@@ -2,17 +2,29 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 export default function EmpowerementLoanDetailForm({
   formFields,
   setFormFields,
 }) {
+  const [
+    dateSignedFinancialInstitutionValue,
+    setDateSignedFinancialInstitutionValue,
+  ] = React.useState(null);
+
   const handleOnChange = (e) => {
     setFormFields((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
+
+  formFields.dateSignedFinancialInstitution =
+    dateSignedFinancialInstitutionValue;
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -30,7 +42,7 @@ export default function EmpowerementLoanDetailForm({
               value={formFields.borrowingDate}
               onChange={handleOnChange}
             ></TextField>
-            , between 
+            , between
             <TextField
               variant="standard"
               sm={4}
@@ -257,7 +269,7 @@ export default function EmpowerementLoanDetailForm({
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h6">e) Repayment for Equipment:</Typography>
-          <Typography component="h1" >
+          <Typography component="h1">
             <ol type="i">
               <li>
                 {" "}
@@ -320,42 +332,48 @@ export default function EmpowerementLoanDetailForm({
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography component="h1">
-            Full Name of Financial Institution:{" "}
-            <TextField
-              variant="standard"
-              sm={8}
-              id="financialInstitution"
-              name="financialInstitution"
-              value={formFields.financialInstitution}
-              onChange={handleOnChange}
-            ></TextField>
-          </Typography>
-          <Typography component="h1">
-            Date:{" "}
-            <TextField
-              variant="standard"
-              sm={8}
-              id="dateSignedFinancialInstitution"
-              name="dateSignedFinancialInstitution"
-              value={formFields.dateSignedFinancialInstitution}
-              onChange={handleOnChange}
-            ></TextField>
-          </Typography>
-          <Typography component="h1">
-            Signature: <TextField variant="standard" sm={8}></TextField>
-          </Typography>
-          <Typography component="h1">
-            Position:{" "}
-            <TextField
-              variant="standard"
-              sm={8}
-              id="positionSignatory"
-              name="positionSignatory"
-              value={formFields.positionSignatory}
-              onChange={handleOnChange}
-            ></TextField>
-          </Typography>
+          <Grid>
+            <Typography component="h1">
+              Full Name of Financial Institution:{" "}
+              <TextField
+                variant="standard"
+                sm={8}
+                id="financialInstitution"
+                name="financialInstitution"
+                value={formFields.financialInstitution}
+                onChange={handleOnChange}
+              ></TextField>
+            </Typography>
+          </Grid>
+
+          <Grid>
+            <Typography component="h1">
+              Position:{" "}
+              <TextField
+                variant="standard"
+                sm={8}
+                id="positionSignatory"
+                name="positionSignatory"
+                value={formFields.positionSignatory}
+                onChange={handleOnChange}
+              ></TextField>
+            </Typography>
+          </Grid>
+          <Grid>
+            <Typography component="h1">
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <DatePicker
+                  label="Date"
+                  inputFormat="MM/dd/yyyy"
+                  value={dateSignedFinancialInstitutionValue}
+                  onChange={(newValue) => {
+                    setDateSignedFinancialInstitutionValue(newValue);
+                  }}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </LocalizationProvider>
+            </Typography>
+          </Grid>
         </Grid>
       </Grid>
     </React.Fragment>
