@@ -5,17 +5,29 @@ import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 export default function EmpowerementGrantDetailForm({
   formFields,
   setFormFields,
 }) {
+  const [registrationDateValue, setRegistrationDateValue] =
+    React.useState(null);
+    const [firstApplicantDateSignedValue, setFirstApplicantDateSignedValue] = React.useState(null);
+    const [secondtApplicantDateSignedValue, setSecondApplicantDateSignedValue] = React.useState(null);
+
   const handleOnChange = (e) => {
     setFormFields((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
+
+  formFields.registrationDate = registrationDateValue;
+  formFields.firstApplicantDateSigned = firstApplicantDateSignedValue;
+  formFields.secondApplicantDateSigned = secondtApplicantDateSignedValue;
 
   return (
     <React.Fragment>
@@ -96,16 +108,17 @@ export default function EmpowerementGrantDetailForm({
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            required
-            id="registrationDate"
-            name="registrationDate"
-            label="3. Date when Club/Organised Group/Enterprise/Cooperative was registered with relevant authorities"
-            fullWidth
-            variant="standard"
-            value={formFields.registrationDate}
-            onChange={handleOnChange}
-          />
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              label="3. Registration Date"
+              inputFormat="MM/dd/yyyy"
+              value={registrationDateValue}
+              onChange={(newValue) => {
+                setRegistrationDateValue(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
         </Grid>
         <Grid item xs={12}>
           <Typography>
@@ -420,15 +433,17 @@ export default function EmpowerementGrantDetailForm({
             value={formFields.firstApplicantNrc}
             onChange={handleOnChange}
           />
-          <TextField
-            id="firstApplicantDateSigned"
-            name="firstApplicantDateSigned"
-            label="Date"
-            fullWidth
-            variant="standard"
-            value={formFields.firstApplicantDateSigned}
-            onChange={handleOnChange}
-          />
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              label=" Date"
+              inputFormat="MM/dd/yyyy"
+              value={firstApplicantDateSignedValue}
+              onChange={(newValue) => {
+                setFirstApplicantDateSignedValue(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Typography>Second Applicant</Typography>
@@ -469,15 +484,17 @@ export default function EmpowerementGrantDetailForm({
             value={formFields.secondApplicantNrc}
             onChange={handleOnChange}
           />
-          <TextField
-            id="secondApplicantDateSigned"
-            name="secondApplicantDateSigned"
-            label="Date"
-            fullWidth
-            variant="standard"
-            value={formFields.secondApplicantDateSigned}
-            onChange={handleOnChange}
-          />
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              label=" Date"
+              inputFormat="MM/dd/yyyy"
+              value={secondtApplicantDateSignedValue}
+              onChange={(newValue) => {
+                setSecondApplicantDateSignedValue(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
         </Grid>
       </Grid>
     </React.Fragment>
