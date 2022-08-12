@@ -20,7 +20,7 @@ export default function EmpowerementLoanDetailForm({
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography>
+          <Typography component="h1">
             This LOAN AGREEMENT, is made this day,{" "}
             <TextField
               variant="standard"
@@ -86,7 +86,7 @@ export default function EmpowerementLoanDetailForm({
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography>
+          <Typography component="h1">
             The Lender agrees to give loan funds/material/equipment worth ZMK
             <TextField
               variant="standard"
@@ -110,7 +110,7 @@ export default function EmpowerementLoanDetailForm({
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography>
+          <Typography component="h1">
             Therefore, the Beneficiary accepts the Terms and Conditions of the
             said loan amounting to{" "}
             <TextField
@@ -146,7 +146,7 @@ export default function EmpowerementLoanDetailForm({
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h6">a) Payback Period</Typography>
-          <Typography>
+          <Typography component="h1">
             The payback period for the loan shall be
             <TextField
               variant="standard"
@@ -161,7 +161,7 @@ export default function EmpowerementLoanDetailForm({
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h6">b) Loan Repayment</Typography>
-          <Typography>
+          <Typography component="h1">
             <ol type="i">
               <li>
                 The first payment shall be 60 days from the date of getting the
@@ -188,7 +188,7 @@ export default function EmpowerementLoanDetailForm({
             The Borrower shall deposit the loan repayment by way of monthly
             instalments through;
           </Typography>
-          <Typography>
+          <Typography component="h1">
             <ol type="i">
               <li>
                 Bank Account{" "}
@@ -236,7 +236,7 @@ export default function EmpowerementLoanDetailForm({
           <Typography variant="h6">
             d) Ownership of Equipment and Machinery using this Fund:
           </Typography>
-          <Typography>
+          <Typography component="h1">
             <ol type="i">
               <li>
                 {" "}
@@ -257,7 +257,7 @@ export default function EmpowerementLoanDetailForm({
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h6">e) Repayment for Equipment:</Typography>
-          <Typography component={"span"} variant={"body2"}>
+          <Typography component="h1" >
             <ol type="i">
               <li>
                 {" "}
@@ -306,7 +306,7 @@ export default function EmpowerementLoanDetailForm({
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6">
+          <Typography variant="h6" component="h1">
             SIGNED BY{" "}
             <TextField
               sm={8}
@@ -320,7 +320,7 @@ export default function EmpowerementLoanDetailForm({
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography>
+          <Typography component="h1">
             Full Name of Financial Institution:{" "}
             <TextField
               variant="standard"
@@ -331,7 +331,7 @@ export default function EmpowerementLoanDetailForm({
               onChange={handleOnChange}
             ></TextField>
           </Typography>
-          <Typography>
+          <Typography component="h1">
             Date:{" "}
             <TextField
               variant="standard"
@@ -342,10 +342,10 @@ export default function EmpowerementLoanDetailForm({
               onChange={handleOnChange}
             ></TextField>
           </Typography>
-          <Typography>
+          <Typography component="h1">
             Signature: <TextField variant="standard" sm={8}></TextField>
           </Typography>
-          <Typography>
+          <Typography component="h1">
             Position:{" "}
             <TextField
               variant="standard"

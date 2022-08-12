@@ -727,7 +727,7 @@ export default function SkillsTrainingBursaryDetailForm({
         <Typography variant="h6" gutterBottom>
           PART E: DECLARATION
         </Typography>
-        <Typography>
+        <Typography component="h1">
           I <TextField variant="standard" id="applicantNameDecl" name="applicantNameDecl"> </TextField>of NRC number
            <TextField variant="standard" id="applicantNRCDecl" name="applicantNRCDecl"> </TextField> do declare that to the
           best of my knowledge, the information I have given is the absolute

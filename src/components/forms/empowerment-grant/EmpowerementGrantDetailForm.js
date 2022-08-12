@@ -325,7 +325,7 @@ export default function EmpowerementGrantDetailForm({
             14. Has your Club/Group/Enterprise/Cooperative received any training
             in any of the following;
           </Typography>
-          <Typography>
+          <Typography component="h1">
             <ol type="a">
               <li> Entrepreneurship/Business Skills</li>
               <li> Technical and Vocational Skills</li>
@@ -369,7 +369,7 @@ export default function EmpowerementGrantDetailForm({
         </Grid>
         <Grid item xs={12}>
           <Typography>17. DECLARATION</Typography>
-          <Typography>
+          <Typography component="h1">
             We the undersigned, on this day of{" "}
             <TextField variant="standard" sm={6}></TextField> declare that the
             information given herein is the correct state of affairs to the best
