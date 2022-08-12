@@ -25,30 +25,30 @@ const NavBar2 = () => {
             CDF
           </Typography>
           <nav>
-            <Link
+            {/* <Link
               variant="button"
-              color="text.primary"
+              color="inherit"
               href="/features"
               sx={{ my: 1, mx: 1.5,  textDecoration: 'none', }}
             >
               Features
-            </Link>
+            </Link> */}
             <Link
               variant="button"
-              color="text.primary"
+              color="inherit"
               href="/about"
               sx={{ my: 1, mx: 1.5,  textDecoration: 'none', }}
             >
               About
             </Link>
-            <Link
+            {/* <Link
               variant="button"
-              color="text.primary"
+              color="inherit"
               href="/guide"
               sx={{ my: 1, mx: 1.5,   textDecoration: 'none',}}
             >
               Guide
-            </Link>
+            </Link> */}
           </nav>
           <Button
             href="#"
