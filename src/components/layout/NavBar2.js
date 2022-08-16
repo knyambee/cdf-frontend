@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import AuthService from "../../security/AuthService";
 
 const NavBar2 = () => {
   return (
@@ -51,12 +52,12 @@ const NavBar2 = () => {
             </Link> */}
           </nav>
           <Button
-            href="#"
+            onClick={AuthService.logout}
             variant="outlined"
             sx={{ my: 1, mx: 1.5 }}
             color="inherit"
           >
-            Login
+            Logout
           </Button>
         </Toolbar>
       </AppBar>

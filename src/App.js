@@ -9,9 +9,11 @@ import CommunityProject from "./components/forms/community-propject/CommunityPro
 import SkillsTrainingBursary from "./components/forms/skills-development-bursary/SkillsTrainingBursary";
 import EmpowermentGrant from "./components/forms/empowerment-grant/EmpowermentGrant";
 import EmpowermentLoan from "./components/forms/empowerment-loan/EmpowermentLoan";
-import CssBaseline from '@mui/material/CssBaseline';
-import GlobalStyles from '@mui/material/GlobalStyles';
+import CssBaseline from "@mui/material/CssBaseline";
+import GlobalStyles from "@mui/material/GlobalStyles";
 import Features from "./components/pages/Features";
+import RenderOnRole from "./security/RenderOnRole";
+import DashBoard from "./admin/DashBoard";
 
 function App() {
   return (
@@ -21,6 +23,14 @@ function App() {
       />
       <CssBaseline />
       <NavBar2 />
+      {/* Admin */}
+      <RenderOnRole roles={['admin']}>
+        <Routes>
+          <Route path="/" element={<DashBoard />}></Route>
+          <Route path="About" element={<About />}></Route>
+        </Routes>
+      </RenderOnRole>
+      <RenderOnRole roles={['user']}>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="Guide" element={<Guide />}></Route>
@@ -35,6 +45,7 @@ function App() {
         <Route path="features" element={<Features />}></Route>
         <Route path="/*" element={<Missing />}></Route>
       </Routes>
+      </RenderOnRole>
       <Footer />
     </div>
   );
