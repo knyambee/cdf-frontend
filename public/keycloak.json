@@ -1,6 +1,6 @@
 {
-  "realm": "cdf",
-  "auth-server-url": "https://lemur-15.cloud-iam.com/auth/",
+  "realm": "CDF DEMO",
+  "auth-server-url": "http://localhost:8080/",
   "ssl-required": "external",
   "resource": "cdf-frontend",
   "public-client": true,

@@ -16,6 +16,7 @@ import RenderOnRole from "./security/RenderOnRole";
 import DashBoard from "./admin/DashBoard";
 
 function App() {
+  console.log(RenderOnRole.roles);
   return (
     <div className="">
       <GlobalStyles
@@ -24,13 +25,13 @@ function App() {
       <CssBaseline />
       <NavBar2 />
       {/* Admin */}
-      <RenderOnRole roles={['admin']}>
+      <RenderOnRole roles={['Admin']}>
         <Routes>
           <Route path="/" element={<DashBoard />}></Route>
           <Route path="About" element={<About />}></Route>
         </Routes>
       </RenderOnRole>
-      <RenderOnRole roles={['user']}>
+      <RenderOnRole roles={['Applicant']}>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="Guide" element={<Guide />}></Route>
