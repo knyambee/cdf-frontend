@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: 'https://cdf-backend.herokuapp.com/api'
+    baseURL: 'http://localhost:8090/api'
 });
 
 

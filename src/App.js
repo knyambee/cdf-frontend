@@ -16,7 +16,6 @@ import RenderOnRole from "./security/RenderOnRole";
 import DashBoard from "./admin/DashBoard";
 
 function App() {
-  console.log(RenderOnRole.roles);
   return (
     <div className="">
       <GlobalStyles

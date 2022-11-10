@@ -11,7 +11,13 @@ const login = (onAuthenticatedCallback) => {
   keycloakInstance
     .init({ onLoad: "login-required" })
     .then(function (authenticated) {
-      authenticated ? onAuthenticatedCallback() : alert("non authenticated");
+      if (authenticated) {
+        onAuthenticatedCallback();
+      } else {
+        alert("Not authenticated");
+      }
+      localStorage.setItem("bearer-token", keycloakInstance.token);
+
     })
     .catch((e) => {
       console.dir(e);
@@ -29,11 +35,15 @@ const getUsername = () => keycloakInstance.tokenParsed?.preferred_username;
 const hasRole = (roles) =>
   roles.some((role) => keycloakInstance.hasRealmRole(role));
 
+  // Get Authorization token
+  const getToken = keycloakInstance.token;
+
 const AuthService = {
   login,
   getUsername,
   logout,
   hasRole,
+  getToken,
 };
 
 export default AuthService;

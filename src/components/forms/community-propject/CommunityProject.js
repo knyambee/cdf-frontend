@@ -58,7 +58,7 @@ const CommunityProject = () => {
 
   const handleSubmitApplication = () => {
     try {
-      api.post("/communityprojects", formFields);
+      api.post("/communityprojects", formFields, {headers: {'Authorization': `Bearer ${localStorage.getItem("bearer-token")}`}});
     } catch (err) {
       console.log(`Error ${err.message}`);
     }
